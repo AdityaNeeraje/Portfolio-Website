@@ -29,4 +29,6 @@ flask run
 ## Usage
 The home page displays the title and intro of my top 3 hobbies, along with a Read More link to take the user to the specific page for each hobby. The home page also links to my Github and Codeforces accounts.
 
-Each hobby page displays a sideshow of images, cycling through images with the image changing every 5s. 
+Each hobby page displays a sideshow of images, cycling through images with the image changing every 5s. The home page can be accessed again through either the navbar or the Return to Home buttons. A svg provided the background wave-like graphics.
+
+The navbar also links to two games, a Name the States game and a game of Othello. The Name the States game simulates the Sporcle quiz of the same name. The full name of a state is to be typed in the input box, and the label of the state state is automatically displayed on the map if a valid state is typed. Note that this is case-insensitive. The Hint button gives a partially blanked out state amongst the states not guessed until then. The hint is displayed above the input box, with asterisks representing blanked out characters. Spaces are provided in the appropriate locations for states whose names have multiple words.
