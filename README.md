@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Short description of your project.
+Hi! My name is Aditya Neeraje. I am a fresher in the CSE Department at IITB. Currently, I'm interested in honing my programming skills and exploring the fields of Reinforcement Learning and Natural Language Processing.
 
 ## Table of Contents
 
