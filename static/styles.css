@@ -1,0 +1,276 @@
+body{
+  font-family: 'Raleway', sans-serif;
+  color:#212121;
+}
+
+#slideshow-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.fade {
+    animation: fade 3s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+}
+
+.wrapper{
+  position: relative;
+  clear:both;
+  margin: 0 auto 75px auto;
+  width: 100%;
+  overflow: hidden;
+}
+
+.top{
+    font-weight: bold;
+  background: #4e89ae;
+  height: 180px;
+  border-top: 20px solid #43658b;
+}
+
+.top .title {
+  width: 700px;
+  margin: 38px auto 0 auto; 
+}
+
+.title h1 {
+    font-size: 36px;
+    color: #bc7ce0;
+    font-weight: 700;
+    text-shadow: 2px 2px black;
+}
+
+.content{
+    margin: -80px auto 100px;
+  padding-bottom: 20px;
+}
+
+.card{
+  position: relative;
+  background: NavajoWhite;
+  padding:50px;
+  width: 600px;
+  margin: 20px auto 0 auto;
+  box-shadow: 0 2px 4px rgba(100,100,100,.1);
+}
+
+
+
+.card h2 {
+  font-size:24px;
+  font-weight:600;
+  color: Red;
+}
+
+.card h2 a {
+  color:#CC0000;
+  text-decoration:none;
+}
+
+.card .text {
+  color:#212121;
+  margin-top:20px;
+  font-size:15px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #43658b;
+  color: white;
+  text-align: center;
+}
+
+.return_link {
+    font-weight: 700;
+    background-color: cyan;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:not(.image_anchor) {
+    transition: color .4s ease-out;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: Navy;
+}
+
+a:hover {
+    color: darkslategray;
+}
+
+a:active {
+    color: fuchsia;
+}
+
+h3 {
+    color: purple;
+    font-weight: bold;
+}
+
+.copyright-footer {
+    position: fixed;
+    bottom: 0px;
+    height: 40px;
+    font-size: 20px;
+    z-index: 2;
+}
+
+svg {
+      position: fixed;
+      bottom: 10px;
+      left: 0px;
+      width: 105%;
+      background: none;
+      fill-opacity:"0.0";
+}
+
+#contact_box {
+    animate: enlarge;
+    position: sticky;
+    bottom: 100px;
+    left: 600px;
+}
+
+footer {
+     z-index: -1;
+}
+
+a:hover {
+  color: #457DFB;
+  text-decoration: none;
+}
+
+a:hover::after {
+  border-color: #457DFB;
+  right: 0;
+}
+
+a:hover img#instagram {
+      transform: scale(1.2); /* Enlarge the image on hover */
+      box-shadow: 0 0 50px rgba(0, 0, 255, 1); /* Add a glow/shadow effect */
+}
+
+a:hover img#codeforces {
+      transform: scale(1.2); /* Enlarge the image on hover */
+      box-shadow: 0 0 50px rgba(0, 0, 255, 1); /* Add a glow/shadow effect */
+}
+
+.not_image::after {
+  border-radius: 1em;
+  border-top: .1em solid #2F56B0;
+  content: "";
+  position: absolute;
+  right: 100%;
+  bottom: .14em;
+  left: 0;
+  transition: right .4s cubic-bezier(0,.5,0,1),
+              border-color .4s ease-out;
+}
+
+.content, footer {
+     overflow-y: hidden;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.svg {
+    z-index: -1;
+}
+
+.footer_buttons {
+    position: sticky;
+    bottom: 60px;
+    left: 0px;
+    text-align: center;
+}
+
+body {
+  background-color: #43658b;
+  line-height: auto;
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    width: 90%;
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 90%;
+  }
+  .card .text {
+    font-size: 29px;
+  }
+}
+
+input {
+    border-radius: 2px;
+}
+
+.contact_input {
+    border: 1px solid black;
+    width: 65%;
+    background: #9190ff;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    color: #333; /* Text color in hex format */
+    letter-spacing: 1px;
+}
+
+.dropdown a {
+    color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.navbar a {
+  color: whitesmoke;
+  transition: color 0.3s ease; /* Add a smooth color transition effect */
+}
+
+.navbar a:hover {
+  color: red; /* Change the color on hover, you can adjust the color as needed */
+}
+
+a.not_image {
+    z-index: 2;
+}
+
+.nav-item {
+    padding-left: 20px;
+    padding-right: 20px;
+}

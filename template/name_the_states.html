@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Name the States of the US</title>
+    <link rel=”stylesheet” href=”https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css”>
+    <script src=”https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js”></script>
+    <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js”></script>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/sun.png">
+    <script src="/static/main.js"></script>
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .state_card {
+            position: fixed;
+            font-weight: bold;
+            bottom: 10%;
+            right: 23%;
+            text-align: center;
+            background: none;
+            color: black;
+            width:20rem;
+             padding: 0;
+        }
+        .state_input {
+            position: fixed;
+            bottom: 7%;
+            right: 27.5%;
+            padding: 0;
+        }
+        .submit_button {
+            position: fixed;
+            bottom: 3%;
+            right: 32%;
+            padding: 0;
+        }
+        .scorecard {
+            position: fixed;
+            top: 8%;
+            right: 17%;
+            padding: 0;
+            margin: 0px auto 0 auto;
+            width: 4rem;
+            background: none;
+            border: none;
+            color: Red;
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body background="../static/images/blank_states_img.gif" style="background-repeat: no-repeat; background-color: blueviolet; background-size: 100% 100%; background-attachment: fixed;">
+<div class="card scorecard">
+    Score: {{ score }}/50
+</div>
+{% for i in range(50) %}
+<label id="{{ states[i] }}" style="position: fixed; text-align: left; left: {{ x_coordinates[i] - 2.54 }}%; bottom: {{ y_coordinates[i] }}%; display: none; color: black;">{{ states[i] }}</label>
+{% endfor %}
+{% if msg=="start" %}
+<label for="start_state_name" class="card state_card">
+Guess the name of a state:
+</label><br>
+<input type="text" id="start_state_name" class="state_input" placeholder="Name a state:">
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% for guessed_state in guessed_states %}
+    <script>
+        display_guessed_state("{{ guessed_state }}");
+    </script>
+{% endfor %}
+{% if msg=="normal" %}
+<label for="normal_state_name" class="card state_card">
+Guess the name of a state:
+</label><br>
+<input type="text" id="normal_state_name" placeholder="Name a state:" class="state_input" >
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% if msg=="already_guessed" %}
+<label for="normal_state_name" class="card state_card">
+You have already guessed that state:
+</label><br>
+<input type="text" id="guessed_state_name" placeholder="Name a state:" class="state_input">
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% if msg=="incorrect" %}
+<label for="incorrect_state_name" class="card state_card">
+The state you have typed does not exist:
+</label><br>
+<input type="text" id="incorrect_state_name" placeholder="Name a state:" class="state_input">
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% if msg=="blank" %}
+<label for="no_state_name" class="card state_card">
+Please type a valid state name:
+</label><br>
+<input type="text" id="no_state_name" placeholder="Name a state:" class="state_input">
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% if msg=="hint" %}
+<label for="hint_state_name" class="card state_card">
+    Here's a hint: <span style="font-weight: bold;">{{ hint }}</span>
+</label><br>
+<input type="text" id="hint_state_name" placeholder="Name a state:" class="state_input">
+<input type="submit" value="Submit" class="submit_button" onclick="check_state_name()">
+{% endif %}
+{% if msg=="give_up" %}
+{% for state in states if state not in guessed_states %}
+    <script>
+        display_guessed_state("{{ state }}", give_up=true);
+    </script>
+{% endfor %}
+{% endif %}
+{% if msg != "give_up" and msg != "victory" %}
+<button onclick="give_hint()" class="btn btn-info return_link" style="border: none; background-color: #63fb45; position: fixed; right: 7.8%; bottom: 35%;">Hint</button>
+<button onclick="give_up()" class="btn btn-info return_link" style="border: none; background-color: #ffc04b; color: Red; position: fixed; right: 7%; bottom: 28%;">Give Up</button>
+<script>
+    submit_on_pressing_enter()
+</script>
+{% endif %}
+{% if msg == "give_up" or msg == "victory" %}
+<button onclick="restart()" class="btn btn-info return_link" style="border: none; background-color: #ffc04b; color: Red; position: fixed; right: 6%; bottom: 28%;">Restart Game</button>
+{% endif %}
+<a href="{{ url_for('welcome_page') }}" class="return_link not_image" style="position: fixed; right: 5%; bottom: 20%;">Return to Home</a>
+</body>
+</html>

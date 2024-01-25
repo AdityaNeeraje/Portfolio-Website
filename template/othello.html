@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Othello Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-XeLqf8n7fBtL6Jr+ckx6zvD5+1dMJ3jN8CV2R4JDGCBDpYZ6Z1jFUwos/0Of4D0J" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="/static/main.js"></script>
+    <link rel="icon" type="image/x-icon" href="/static/images/sun.png">
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: Green;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); /* 8 columns */
+            grid-template-rows: repeat(8, 1fr); /* 8 rows */
+            height: 95vh;
+        }
+        .box {
+            position: relative;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            align-items: center;
+        }
+        .loc_button {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        .box img {
+            height: 80px;
+            width: auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body background="../static/images/Billiard Tablecloth.png">
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About Me<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Play games!
+        </a>
+        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/hobby/states_game">Name the States</a>
+          <a class="dropdown-item" href="/hobby/othello">Othello</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" onclick="restart_othello()">Restart Game<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+
+<div class="grid-container">
+{% for i in range(64) %}
+<div class="box"><img id="white_{{ i }}" src="../static/images/black_coin.png" style="display: none;"><img id="black_{{ i }}" src="../static/images/white_coin.png" style="display: none;"><button class="loc_button" id="button_{{ i }}" disabled="disabled" onclick="play_othello({{ i }})"></button></div>
+<!--<div class="row container-sm-12" style="border: 1px solid black">-->
+<!--{% for j in range(8) %}-->
+<!--<div class="container-1.5" style="border: 1px solid black">-->
+<!--{% endfor %}-->
+<!--</div>-->
+{% endfor %}
+{% for position in white_buttons_list %}
+<script>
+    display_box("white_{{ position }}")
+</script>
+{% endfor %}
+{% for position in black_buttons_list %}
+<script>
+    display_box("black_{{ position }}")
+</script>
+{% endfor %}
+{% for position in black_clickable_buttons %}
+<script>
+    document.getElementById("button_{{ position }}").disabled = false;
+</script>
+{% endfor %}
+</div>
+</body>
+</html>

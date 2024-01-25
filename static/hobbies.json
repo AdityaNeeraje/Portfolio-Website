@@ -1,0 +1,30 @@
+{
+  "hobbies": [
+    {
+      "id": 1,
+      "title": "Game Development",
+      "intro": "From playing Othello against a computer to testing your knowledge in Sporcle-like quizzes, get ready to witness some games I've coded.",
+      "body": "Using Python GUIs, reinforcement learning and web scraping, I've replicated multiple classic games including the Nokia Snake Game, Atari's Pong Game, 2048, Othello (as well as coding a computer program to play against the player) and Sporcle's Name the States quizzes for US and India. I've used reinforcement learning to device an optimal policy for Tic Tac Toe (my program even beat my brother twice) and learn a policy for Blackjack (not sure about optimality). Currently, I'm trying to use Flask to code an online 4-player Coup game.",
+      "imagePaths": ["/static/images/Othello.png", "/static/images/Snake Game.png", "/static/images/2048.png", "/static/images/Cookie Clicker.png", "/static/images/Name the States of the US.png"],
+      "alts": [
+        "Othello - Can be played Multiplayer or against the Computer", "Snake Game - Have encoded multiple levels of difficulty", "2048 Game", "Playing the Cookie Clicker game for 5 minutes using Selenium", "Name the States of the US Game with hints"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Model United Nations and Debating",
+      "intro": "As an ardent current affairs enthusiast and a passionate debater, I have been a hardcore participant in the MUN circuit for the past 4 years, attending over 15 conferences, winning 8 Best Delegate awards and numerous High Commendations.",
+      "body": "As an ardent current affairs enthusiast and a passionate debater, I have been a hardcore participant in the MUN circuit for the past 4 years. I've also been active in WeSpeak's Debate sessions ever since joining IITB and am heading out for my first Parliamentary Debate competition, at IIMA Ahmedabad, on the 26th of January, 2024. Ask any of my friends and they will vouch that I instinctively read the latest news on the Reuters app whenever I am free.",
+      "imagePaths": ["/static/images/CVMUN 2022.jpeg", "/static/images/CVMUN 2023.jpeg", "/static/images/VMUN 2023.jpeg"],
+      "alts": ["CVMUN 2022", "CVMUN 2023", "VMUN 2023"]
+    },
+    {
+      "id": 3,
+      "title": "Competitive Programming on Codeforces",
+      "intro": "Having been introduced to CP by WNCC's workshop early in the first semester, I have solved 343 Problems over the last 4 months",
+      "body": "I have participated in 16 contests",
+      "imagePaths": ["/static/images/Competitive_Programming.jpg"],
+      "alts": [""]
+    }
+  ]
+}
