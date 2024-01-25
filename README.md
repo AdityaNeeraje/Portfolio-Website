@@ -5,7 +5,7 @@ Hi! My name is Aditya Neeraje. I am a fresher in the CSE Department at IITB. Cur
 ## Table of Contents
 
 - [About](#about)
-- [Getting Started](#getting-started)
+- [How to Get the Server Running](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -16,10 +16,14 @@ Provide a brief overview of your project. Mention the purpose, key features, and
 
 ## Getting Started
 
-Include instructions on how to set up the project locally. If there are dependencies or prerequisites, list them here. You can also include steps for installation and configuration.
+To run the server locally, download (git clone) the repository locally. Opening the folder housing the python code, run the following
 
 ```bash
-# Example Installation Steps
-git clone https://github.com/your-username/your-project.git
-cd your-project
-npm install
+# Installation steps
+git clone https://github.com/your-username/your-project.git](https://github.com/AdityaNeeraje/Portfolio-Website)https://github.com/AdityaNeeraje/Portfolio-Website
+cd Portfolio-website
+sudo apt install python3-flask # If flask is not already installed
+export FLASK_APP=hello
+export FLASK_ENV=development
+pip install –-upgrade Flask Werzeug
+flask run
