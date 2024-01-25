@@ -25,7 +25,7 @@ export FLASK_APP=hello
 export FLASK_ENV=development
 pip install –-upgrade Flask Werzeug
 flask run
-
+'''
 
 The home page displays the title and intro of my top 3 hobbies, along with a Read More link to take the user to the specific page for each hobby. The home page also links to my Github and Codeforces accounts.
 
